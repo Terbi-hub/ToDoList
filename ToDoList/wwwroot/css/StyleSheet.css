@@ -1,0 +1,160 @@
+﻿@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+div {
+    display: block;
+}
+
+a {
+    color: #000 !important;
+    text-decoration: none
+}
+
+.menu {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+    .menu li {
+        cursor: pointer;
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+input {
+    background: none;
+    border: none;
+    border-radius: 0;
+    font-size: 17px;
+    padding: 12px 15px 11px 15px;
+}
+
+
+.button {
+    border: 2px solid #4CAF50;
+    background-color: white;
+    margin: 40px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+.btn {
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    color: snow;
+}
+
+div.list_item {
+    position: fixed;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.item_list {
+    margin-left: 200px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+    .item_list li {
+        cursor: pointer;
+        position: relative;
+        padding: 13px 8px 10px 10px;
+        width: 90%;
+        background: #eee;
+        font-size: 17px;
+        transition: 0.2s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .item_list .context .data {
+        margin-left: 600px;
+        position: relative;
+        text-align: left;
+        color: darkviolet;
+    }
+
+    .item_list .context .priority {
+        margin-left: 830px;
+        position: fixed;
+        text-align: center;
+        padding-top: 0px;
+        padding-right: 36px;
+        color: darkviolet;
+    }
+
+    .item_list li:nth-child(odd) {
+        background: #f9f9f9;
+    }
+
+    .item_list li:hover {
+        margin-left: 5px;
+        background: #6fa985;
+    }
+
+    .item_list li.checked {
+        background: #888;
+        color: #fff;
+    }
+
+        .item_list li.checked .list_item {
+            text-decoration: line-through;
+        }
+
+
+.close {
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    top: 0;
+}
+
+    .close:hover {
+        background-color: #f44336;
+        color: white;
+    }
+
+.footer {
+    position: absolute;
+    margin-left: 250px;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}

@@ -1,0 +1,76 @@
+﻿@using ToDoList.Model
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@model ToDoItemPageViewModel
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@Model.PageTitle</title>
+
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <div class="content">
+        <div class="menu">
+            <ul>
+                <li id="home" onclick="window.location.href = '/ToDo/Home'">Home</li>
+                <li id="today" onclick="window.location.href = '/ToDo/TodayWork'">Today</li>
+                <li id="tomorrow" onclick="window.location.href = '/ToDo/TomorrowWork'">Tomorrow</li>
+            </ul>
+        </div>
+        <div class="item_list">
+            <a href="~/ToDo/Create" class="button">Create</a>
+            <ul id="list">
+                @foreach (var item in Model.Items)
+                {
+                    @if (!item.IsCompleted)
+                    {
+                        <li id="#li">
+                            <div class="context">
+                                <input class="checkbox" type="checkbox" checked="@item.IsCompleted" onclick="window.location.href = '/ToDo/IsCompleted/@item.Id'" />
+                                <div class="list_item">@item.Text</div>
+                                <div class="priority">@item.Priority</div>
+                                <div class="data">@item.Date.ToString("dd MM yyyy")</div>
+                                <form method="post" action="~/ToDo/Delete/@item.Id">
+                                    <span class="close">
+                                        <input type="submit" value="×" class="btn" />
+                                    </span>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                }
+                @foreach (var item in Model.Items)
+                {
+                    @if (item.IsCompleted)
+                    {
+                        <li id="#li2" class="checked">
+                            <div class="context">
+                                <input class="checkbox" type="checkbox" checked="@item.IsCompleted" onclick="window.location.href = '/ToDo/IsCompleted/@item.Id'" />
+                                <div class="list_item">@item.Text</div>
+                                <div class="priority">@item.Priority</div>
+                                <div class="data">@item.Date.ToString("dd MM yyyy")</div>
+                                <form method="post" action="~/ToDo/Delete/@item.Id">
+                                    <span class="close">
+                                        <input type="submit" value="×" class="btn" />
+                                    </span>
+                                </form>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        &copy; 2021 - WebToDo
+    </footer>
+    <script>
+
+    </script>
+</body>
+</html>
+
